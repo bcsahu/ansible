@@ -2,7 +2,11 @@
 - hosts: all
   become: yes
   tasks:
-  - name: uninstall webserver on node side
+  - name: install webserver on node side
     apt:
      name: apache2
-     state: absent
+     state: present
+  - name: install git on node side
+    apt:
+      name: git
+      state: present
